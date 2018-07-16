@@ -1,0 +1,28 @@
+<form id="instabugForm">
+  <input
+    id="email"
+    class="instabug-input"
+    type="text"
+    name="email"
+    placeholder="Email"
+    value="" />
+  <textarea
+  id="comment"
+  class="instabug-input"
+  name="comment"
+  placeholder="What went wrong?"
+  rows="4"
+  cols="50"></textarea>
+
+  <button
+    type="button"
+    onclick="ibgSdk.submitReport()">
+    Submit Bug
+  </button>
+
+  <button
+    type="button"
+    onclick="ibgSdk.resetAndClose()">
+    Cancel
+  </button>
+</form>

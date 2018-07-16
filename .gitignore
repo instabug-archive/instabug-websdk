@@ -1,0 +1,7 @@
+node_modules/
+build/
+yarn-error.log
+coverage/
+src/views/styles.css
+.DS_Store
+*/.DS_Store

@@ -1,0 +1,28 @@
+{
+  "extends": "airbnb-base",
+  "rules": {
+    "func-names": "off",
+    "no-param-reassign": "off",
+    "default-case": "off",
+    "comma-dangle": ["error", "always-multiline"],
+    "consistent-return": "off",
+    "new-cap": "off",
+    "no-underscore-dangle": "off",
+    "no-use-before-define": "off",
+    "no-new": "off",
+    "global-require": "off",
+    "no-control-regex": "off",
+    "wrap-iife": ["error", "outside"],
+    "no-mixed-operators": "off",
+    "no-plusplus": "off",
+    "no-bitwise": "off",
+    "no-restricted-globals": "off",
+    "prefer-destructuring": "off"
+  },
+  "plugins": [
+    "import"
+  ],
+  "env": {
+      "browser": true
+  }
+}
