@@ -83,7 +83,7 @@ module.exports = (config) => {
       reporters: [
         {
           type: 'html',
-          subdir: 'html-coverage-report'
+          subdir: 'html-coverage-report',
         },
         {
           type: 'text',
