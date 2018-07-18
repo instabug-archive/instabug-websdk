@@ -1,4 +1,3 @@
-
 function InstabugException(message) {
   this.message = message;
   this.name = 'InstabugException';

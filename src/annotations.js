@@ -28,6 +28,7 @@ let drawingSettings;
 function init(options) {
   const drawingCanvas = document.createElement('canvas');
   const ctx = drawingCanvas.getContext('2d');
+
   let canvasContainer = document.createElement('div');
   let itemPoints;
   let paint;
@@ -62,6 +63,7 @@ function init(options) {
     if (paint) {
       const fromPoint = itemPoints.slice(-1)[0];
       const toPoint = [e.clientX, e.clientY];
+
       itemPoints.push(
         _getCursorPosition(e),
       );
@@ -94,6 +96,7 @@ function renderScreenshot(image) {
   screenshot.onload = () => {
     context.drawImage(screenshot, 0, 0, window.innerWidth, window.innerHeight);
   };
+
   elem.show('#instabugFormContainer');
 }
 
@@ -138,6 +141,7 @@ function _getCursorPosition(e) {
  */
 function _drawLine(canvasContext, from, to, options) {
   const ctx = canvasContext;
+
   ctx.save();
   ctx.lineJoin = 'round';
   ctx.lineCap = 'round';

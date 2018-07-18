@@ -5,15 +5,6 @@
 import element from './element';
 import annotation from './annotations';
 
-
-document.addEventListener('screenShotCreated', () => {
-  annotation.init();
-  annotation.renderScreenshot(document.getElementById('instabugImage').value);
-  element.addClass('body', 'u-disable-scrolling');
-  document.getElementById('instabugImage').remove();
-});
-
-
 /**
  * isInstalled - check if the web browser extension is installed or not
  *
@@ -33,6 +24,14 @@ function takeScreenShot() {
   event.initEvent('takeScreenShot', true, true);
   document.dispatchEvent(event);
 }
+
+
+document.addEventListener('screenShotCreated', () => {
+  annotation.init();
+  annotation.renderScreenshot(document.getElementById('instabugImage').value);
+  element.addClass('body', 'u-disable-scrolling');
+  document.getElementById('instabugImage').remove();
+});
 
 module.exports = {
   isInstalled,

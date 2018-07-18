@@ -91,7 +91,7 @@ module.exports = (config) => {
       ],
     },
     client: {
-      captureConsole: false,
+      captureConsole: true,
     },
   });
 };
