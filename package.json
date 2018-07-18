@@ -1,7 +1,7 @@
 {
   "name": "instabug-websdk",
   "description": "Instabug web sdk for reporting bugs and sending logs and crash data from web apps",
-  "version": "1.3",
+  "version": "1.3.0",
   "scripts": {
     "test": "gulp test",
     "serve": "gulp",
