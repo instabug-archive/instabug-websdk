@@ -3,7 +3,6 @@
  */
 
 /* eslint-disable no-console */
-
 import views from './views';
 import bugReport from './bugReport';
 import element from './element';
@@ -21,13 +20,6 @@ const domReady = (callback) => {
 if (!document.doctype) {
   console.error('InstaBug Fatal Err: page has no doctype declared');
 }
-
-
-/**
- * initSDK - initialize the sdk
- * pa
- */
-
 
 /**
  * initSDK - initialize the sdk, setting up the integration tokens with uploading services
@@ -122,5 +114,5 @@ const sdk = new IbgSdk();
 window.ibgSdk = sdk;
 
 module.exports = {
-  instabugSdk : IbgSdk,
-}
+  instabugSdk: IbgSdk,
+};

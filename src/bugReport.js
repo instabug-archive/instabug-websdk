@@ -36,10 +36,23 @@ function setZapierHookUrl(webhookUrl) {
   IntegrationData.zapierWebhookUrl = webhookUrl;
 }
 
+
+/**
+ * getZapierHookUrl - return zapier webhook url
+ *
+ * @return {string} zapier webhook url
+ */
 function getZapierHookUrl() {
   return IntegrationData.zapierWebhookUrl;
 }
 
+
+/**
+ * setCloudinaryIntegration - setup cloudinary integration data
+ *
+ * @param  {type} cloudName    cloudinary cloudname
+ * @param  {type} uploadPreset cloudinary upload preset
+ */
 function setCloudinaryIntegration(cloudName, uploadPreset) {
   IntegrationData.cloudinaryCloudName = cloudName;
   IntegrationData.cloudinaryUploadPreset = uploadPreset;
@@ -186,7 +199,6 @@ function submitBugReport() {
         elem.hide('#instabugLoading');
         elem.show('#instabugThankYouPage');
       });
-
   } else {
     uploadScreenshotRequest.then((response) => {
       if (response.status === 'OK' && response.data && response.data.secure_url) {
