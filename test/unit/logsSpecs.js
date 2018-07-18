@@ -12,16 +12,6 @@ describe('Logger Module', () => {
       expect(log.length).toBe(1);
       expect(log[0].message).toBe('TEST_CONSOLE');
     });
-
-    it('should set userData then get it', () => {
-      spyOn(logs, 'parseLogObj');
-
-      logs.setUserData('test');
-      logs.getUserData();
-
-      expect(logs.getUserData().length).toBe(18);
-      expect(logs.getAllLogs().userData.length).toBe(1);
-    });
   });
 
   describe('Parsing log object', () => {

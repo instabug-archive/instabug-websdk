@@ -23,4 +23,14 @@ describe('Utils Module', () => {
       expect(utils.isMobile()).toBe(false);
     });
   });
+
+  describe('Image Conversion', () => {
+    it('should convert base64 image to Blob object', () => {
+      const testImage = 'data:image/gif;base64,R0lGODlhAQABAAAAACw=';
+      const binaryImage = utils.dataURItoBlob(testImage);
+
+      expect(binaryImage.type).toBe('image/gif');
+      expect(binaryImage.size).toBe(14);
+    });
+  });
 });
