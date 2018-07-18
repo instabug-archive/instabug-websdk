@@ -20,9 +20,11 @@
     "prefer-destructuring": "off"
   },
   "plugins": [
-    "import"
+    "import",
+    "jasmine"
   ],
   "env": {
-      "browser": true
+      "browser": true,
+      "jasmine": true
   }
 }

@@ -1,18 +1,22 @@
-describe('Extension Module', function(){
+describe('Extension Module', () => {
   const extension = require('../../src/extension');
-  beforeEach(function(){
-    var fakeElement = document.createElement('div');
+
+  beforeEach(() => {
+    const fakeElement = document.createElement('div');
+
     fakeElement.setAttribute('plugin', true);
+
     spyOn(document, 'getElementById').and.returnValue(fakeElement);
     spyOn(document, 'dispatchEvent');
   });
 
-  it('should check if web Extension is installed', function() {
+  it('should check if web Extension is installed', () => {
     expect(extension.isInstalled()).toBe('true');
   });
 
-  it('should fire the screenshot taking event', function(){
+  it('should fire the screenshot taking event', () => {
     extension.takeScreenShot();
+
     expect(document.dispatchEvent).toHaveBeenCalled();
   });
 });

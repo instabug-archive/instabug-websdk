@@ -1,28 +1,24 @@
-describe('Bug Reporting Module', function(){
+/* eslint-disable no-restricted-properties */
+describe('Bug Reporting Module', () => {
   const bugReport = require('../../src/bugReport');
   const elem = require('../../src/element');
 
   const response = {
-    'status': 200,
-    'contentType': 'text/plain',
-    'responseText': '{"id": 123456789}'
+    status: 200,
+    contentType: 'text/plain',
+    responseText: '{"id": 123456789}',
   };
 
-  let fakeElement, fakeForm, fakeEmail, elementShow, elementHide, fakeComment, request, canvasDraw,
-  upLoadRequest;
+  beforeEach(() => {
+    const fakeElement = document.createElement('div');
+    const fakeForm = document.createElement('form');
+    const fakeEmail = document.createElement('input');
+    const fakeComment = document.createElement('input');
 
-  beforeEach(function() {
-    let bugReport;
     jasmine.Ajax.install();
 
-    elementShow = spyOn(elem, 'show');
-    elementHide = spyOn(elem, 'hide');
-
-    fakeElement = document.createElement('div');
-    fakeForm = document.createElement('form');
-    fakeEmail = document.createElement('input');
-    fakeComment = document.createElement('input');
-    canvasDraw = document.createElement('div');
+    spyOn(elem, 'show');
+    spyOn(elem, 'hide');
 
     fakeEmail.type = 'email';
     fakeEmail.name = 'email';
@@ -30,40 +26,39 @@ describe('Bug Reporting Module', function(){
     fakeComment.type = 'text';
     fakeComment.name = 'comment';
     fakeComment.value = 'fake comment';
-
     fakeForm.appendChild(fakeEmail);
     fakeForm.appendChild(fakeComment);
-    spyOn(document, 'getElementById').and.returnValues(fakeForm, false, fakeElement);
-    request = jasmine.Ajax.stubRequest('/api/1').andReturn(response);
 
-    upLoadRequest = jasmine.Ajax.stubRequest('https://api.cloudinary.com/v1_1/fakeId/upload')
-    .andReturn(response);
+    spyOn(document, 'getElementById').and.returnValues(fakeForm, false, fakeElement);
+
+    jasmine.Ajax.stubRequest('/api/1').andReturn(response);
+    jasmine.Ajax.stubRequest('https://api.cloudinary.com/v1_1/fakeId/upload').andReturn(response);
   });
 
-  afterEach(function() {
+  afterEach(() => {
     jasmine.Ajax.uninstall();
   });
 
-  describe('Collect user browser infromation', function() {
-    beforeEach(function() {
-      navigator.__defineGetter__('language', function(){
-          return 'foo' // customized user agent
-      });
+  describe('Collect user browser infromation', () => {
+    beforeEach(() => {
+      navigator.__defineGetter__('language', () => 'foo');
+
       bugReport.getBrowserData();
     });
-    it('should return user object', function() {
+
+    it('should return user object', () => {
       const userInfo = bugReport.getBrowserData();
       expect(typeof userInfo).toBe('object');
     });
   });
 
-  describe('Memory Information', function() {
-    it('should set Zapier webhook url correctly', function() {
+  describe('Memory Information', () => {
+    it('should set Zapier webhook url correctly', () => {
       bugReport.setZapierHookUrl('https://zapier.com');
       expect(bugReport.getZapierHookUrl()).toBe('https://zapier.com');
     });
 
-    it('should submit report', function() {
+    it('should submit report', () => {
       jasmine.Ajax.stubRequest('https://zapier.com').andReturn(response);
       bugReport.submitBugReport();
 

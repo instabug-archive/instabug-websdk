@@ -40,6 +40,7 @@ gulp.task('lint', () => gulp.src([
   paths.gulpFile,
   paths.webpackFile,
   paths.karmaConfig,
+  paths.allTests,
 ])
   .pipe(eslint())
   .pipe(eslint.format())
@@ -72,6 +73,7 @@ gulp.task('watch', () => {
   gulp.watch(paths.sassSrc, ['main']);
   gulp.watch('src/views/*.html', ['main']);
   gulp.watch([paths.webpackFile, paths.karmaConfig], ['main']);
+  gulp.watch([paths.allTests], ['main']);
 });
 
 gulp.task('sync', () => {
