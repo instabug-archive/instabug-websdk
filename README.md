@@ -61,9 +61,9 @@ Now that you included the JS file, you can start using the SDK.  Below is the in
 This function initializes the SDK. When called, the Instabug button should become visible in your UI. 
 #### Parameters
 **options**: `Object` _required_ .
-- `zapierWebhookUrl`: webhook url you get from Zapier while creating a Zap. More details are mentioned here.
-- `cloudinaryCloudName`: cloudinary cloud name, you can find it on your Cloudinary dashboard. More details are mentioned here. 
-- `cloudinaryUploadPreset`: cloudinary upload preset, you can find it on your Cloudinary dashboard. More details are mentioned here. 
+- `zapierWebhookUrl`: webhook url you get from Zapier while creating a Zap. More details are mentioned [here](#zapier-guide).
+- `cloudinaryCloudName`: cloudinary cloud name, you can find it on your Cloudinary dashboard. More details are mentioned [here](#cloudinary-guide). 
+- `cloudinaryUploadPreset`: cloudinary upload preset, you can find it on your Cloudinary dashboard. More details are mentioned [here](#cloudinary-guide).
 
 ### `.disable()`
 Call this function to hide the Instabug button that invokes the bug reporting UI. 
