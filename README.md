@@ -77,4 +77,22 @@ Start by creating an account on [Cloudinary](https://cloudinary.com). Then, you 
 4. The **upload preset name** will be generated to use in the init function.  
 ![alt text](https://files.readme.io/70368bf-Cloudinary3.png)
 
+## Zapier Guide
+Create an account on [Zapier](https://zapier.com) to automatically forward your bug reports to the tool you prefer. You can find below the steps to create a new Zap. 
+1. Select **Webhooks** to be your trigger app. 
+![alt text](https://files.readme.io/6253938-Zapier1.png)
+2. Choose **Catch Hook** as your trigger. 
+![alt text](https://files.readme.io/ed2b766-Zapier2.png)
+3. In the  **Pull in Samples** step, copy the URL to be used in the init function. 
+![alt text](https://files.readme.io/4c38817-Zapier3.png)
+4. While you're still at the same step, try sending a sample bug report. You should then see the success message as displayed below. 
+![alt text](https://files.readme.io/ef3b0b9-Zapier4.png)
+5. Now, you're ready to set up the action. Pick the app you prefer and follow its required steps. In this guide, we're using Slack as an example. 
+![alt text](https://files.readme.io/bcc7f77-Zapier5.png)
+6. In the **Edit Template** step, you can customize the format of the bug report you will be receiving. 
+![alt text](https://files.readme.io/7232147-Zapier6.png)
+7. Test your Zap to make sure everything is working as expected. 
+![alt text](https://files.readme.io/c645c89-Zapier8.png)
+8. Last, give a name to your Zap and turn it on.  
+![alt text](https://files.readme.io/244a5fe-Zapier10.png)
 
