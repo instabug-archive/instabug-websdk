@@ -1,57 +1,66 @@
-# Instabug web SDK 1.2.1-beta
+# Instabug Web SDK 1.0 
 
 ## Overview
-Instabug web sdk is a javascript library provides an easy way to report bugs from your website or webapp.
+[Instabug](https://instabug.com) web sdk is an open-source javascript library that provides an easy way to report bugs from your website with a lot of details to help you reproduce and fix the bugs faster. 
 
-To use the sdk you need to have `application_token`, you  can get it from your [Instabug Dashboard](https://dashboard.instabug.com)
+**This library is built with love by Instabug's team as a free tool to help developers build better websites and is not part of any of Instabug's current subscription plans.**
 
-## Installation
-### Requirements
-Instabug Web SDK requires no special requirements, and has no dependecies on other liberaries or frameworks, and has been tested in all modern browsers with `LocalStorage` capability
+## Requirements
+To start using Instabug, you need to have an account on the following tools:
+* [Zapier](https://zapier.com): to receive your bug reports on a variety of tools: email, Jira, Tello, Slack, etc. 
+* [Cloudinary](https://cloudinary.com): to host the screenshots included in the bug reports online. 
 
-#### Manual Installation
-You can include instabug web sdk to your website just copy the below lines into the end of your page `<body>` tag
-```html
-<script src='https://s3.amazonaws.com/instabug-pro/sdk_releases/instabugsdk-1.2.1.min.js'></script>
+## Installation Steps
+To include Instabug Web SDK in your web app, follow the steps below: 
+
+1. Clone the SDK repository. 
 ```
-#### `bower` installation (recommended)
-You can install the SDK using
-```shell
-bower install instabug-sdk --save
+git clone https://github.com/Instabug/instabug-websdk.git
 ```
-#### `npm` installation
-You can install the SDK using
-```shell
-npm install instabug-sdk --save
+2. Navigate to the cloned folder. 
 ```
-### Initialize the SDK
-After including the sdk js file, you can start it by invoke the `.init()` method and pass the application token as parameter
-```html
+cd instabug-websdk
+```
+3. Install the SDK. 
+```
+yarn install
+```
+4. Build the SDK. 
+```
+yarn build
+```
+5. Last, include the SDK file located in `build/instabug-sdk.min.js` into your index page body. 
+
+## Initialization Steps
+Now that you included the JS file, you can start using the SDK.  Below is the initialization method and its parameters: 
+ ```html
 <script>
   ibgSdk.init({
-     token: <INSTABUG_APP_TOKEN>
+    zapierWebhookUrl: 'ZAPIER_WEBHOOK_URL',
+    cloudinaryCloudName: 'CLOUDINARY_CLOUND_NAME',
+    cloudinaryUploadPreset: 'CLOUDINARY_UPLOAD_PRESET',
   });
 </script>
 ```
 
-### API Refrence
+## API Reference
 
-#### `.init(options)`
-the init function is used to used to initialize the SDK and render the report bug button.
-##### Parameters
-**options**: `Object` _required_ -  pass the application `token`
+### `.init(options)`
+This function initializes the SDK. When called, the Instabug button should become visible in your UI. 
+#### Parameters
+**options**: `Object` _required_ .
+- `zapierWebhookUrl`:- webhook url you get from Zapier while creating a Zap. More details are mentioned here.
+- `cloudinaryCloudName`:- cloudinary cloud name, you can find it on your Cloudinary dashboard. More details are mentioned here. 
+- `cloudinaryUploadPreset`:- cloudinary upload preset, you can find it on your Cloudinary dashboard. More details are mentioned here. 
 
-#### `.disable()`
-used to hide the report bug button
+### `.disable()`
+Call this function to hide the Instabug button that invokes the bug reporting UI. 
 
-#### `.enable()`
-used to show the report bug button
+### `.enable()`
+Call this function to show the Instabug button that invokes the bug reporting UI. 
 
-#### `.invoke()`
-show the report bug view without clicking on the `report bug` button,
-
-You can use this function to start the reporting bug process programmatically from your own script,
-By run `ibgSdk.invoke()` after initialize the sdk
+### `.invoke()`
+Call this function to invoke the bug reporting UI manually from your code independently from the default Instabug button. 
 
 #### `.dismiss()`
-cancel annotations and close all instabug sdk windows
+Call this function to dismiss and clode all the SDK windows. 
