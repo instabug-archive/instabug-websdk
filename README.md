@@ -5,7 +5,7 @@
 # Overview
 [Instabug](https://instabug.com) web SDK is an open-source javascript library that provides an easy way to report bugs from your website with all the details to help you reproduce and fix the bugs faster. 
 
-Your users and testers can attach a screenshot with annotations to highlight the issue, a description of the bug they spotted and their email to reach out and know who is contributing to your app. In addition, more details are automatically captured: 
+Your users and testers can attach a screenshot with annotations to highlight the issue, a description of the bug they spotted and their email. In addition, more details are automatically captured: 
 * Device
 * OS
 * Current view
