@@ -41,7 +41,11 @@ yarn install
 ```
 yarn build
 ```
-5. Last, include the SDK file located in `build/instabug-sdk.min.js` into your index page body. 
+5. Last, copy the file `build/instabug-sdk.min.js` into your web application directory and don't forget to include it
+into your index page body using,
+```
+<script src="/PATH/TO/instabug-sdk.min.js"></script>
+```
 
 ## Initialization Steps
 Now that you included the JS file, you can start using the SDK.  Below is the initialization method and its parameters: 
@@ -82,10 +86,13 @@ Start by creating an account on [Cloudinary](https://cloudinary.com). Then, you 
 
 1. Find your **cloud name** on your dashboard to use it in te init function. 
 ![alt text](https://files.readme.io/58b3f8e-Cloudinary1.png)
+
 2. Navigate to the *Settings* page, and open the *Upload* tab. 
 ![alt text](https://files.readme.io/ea87be3-Cloudinary2.png)
-3. Scroll down to the *Upload Presets* section and click on *Add upload preset*.
+
+3. Scroll down to the *Upload Presets* section and click on *Enable Unsigned Uploading*.
 ![alt text](https://files.readme.io/70368bf-Cloudinary3.png)
+
 4. The **upload preset name** will be generated to use in the init function.  
 ![alt text](https://files.readme.io/70368bf-Cloudinary3.png)
 
