@@ -36,7 +36,7 @@ git clone https://github.com/Instabug/instabug-websdk.git
 ```
 cd instabug-websdk
 ```
-3. Install the SDK. 
+3. Install the dependencies. 
 ```
 yarn install
 ```
