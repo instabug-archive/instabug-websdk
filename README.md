@@ -9,7 +9,7 @@ Your users and testers can attach a screenshot with annotations to highlight the
 * Device
 * OS
 * Current view
-* Location
+* Locale
 * Session duration
 * Screen size
 * Density
