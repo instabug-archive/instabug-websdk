@@ -116,4 +116,4 @@ Create an account on [Zapier](https://zapier.com) to automatically forward your 
 
 # Contributing
 
-We've set up a separate document for our [contribution guidelines](https://instabug.com/instabug/instabug-websdk/blob/master/CONTRIBUTING.md)
+We've set up a separate document for our [contribution guidelines](https://github.com/Instabug/instabug-websdk/blob/master/CONTRIBUTING.md)
